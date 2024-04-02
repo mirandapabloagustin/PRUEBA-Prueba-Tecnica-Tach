@@ -1,8 +1,24 @@
-# Nombre del Proyecto
+# PRUEBA TECNICA TACH
 
-Breve descripción del proyecto.
+Se me encomendo crear dos proyectos independientes con GO utilizando algun framework, uno para cada microservicio.
+Definir las APIs RESTful para cada microservicio.
+Implementar la lógica de negocio para cada microservicio.
+Utilizar Docker para contenerizar cada microservicio.
+Configurar MongoDB para el almacenamiento de datos.
+Conectar los microservicios a MongoDB.
+Implementar la mensajería con RabbitMQ para el microservicio de transacciones.
+Probar los microservicios de forma individual y conjunta.
 
 ## Requisitos Previos
+
+  ## Skills
+  - Go
+  - Fiber framework go
+  - Mongodb
+  - Docker
+  - Conocimientos en arquitectura de microservicios orientada a eventos
+  - Experiencia con RESTful APIs
+  - Conocimientos en mensajería con RabbitMQ
 
   ##-Microservicio de Cuentas:
 
@@ -16,11 +32,6 @@ Breve descripción del proyecto.
   Se comunicará con el microservicio de cuentas para obtener información de las cuentas.
   Utilizará RabbitMQ para la comunicación entre microservicios.
   Almacenará las transacciones en MongoDB.
-
-
-## Configuración
-
-Explica cualquier configuración necesaria antes de levantar el proyecto, como variables de entorno o archivos de configuración que deben ser modificados.
 
 ## Instalación
 
@@ -43,9 +54,6 @@ docker-compose up
 ```
 
 ## Estructura del Proyecto
-
-Explica la estructura de tu proyecto y qué hace cada parte importante del mismo.
-
 ```
 /
 |-- Microservicio-account
@@ -81,7 +89,7 @@ Explica la estructura de tu proyecto y qué hace cada parte importante del mismo
 |       |->go.mod
 |       |->main.go
 |       |->Dockerfile
-|
+|->Desafio-pdf
 |->docker-compose.yml
 |-- README.md
 |-- ...
