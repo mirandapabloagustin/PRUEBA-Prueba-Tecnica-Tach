@@ -9,8 +9,6 @@ Conectar los microservicios a MongoDB.
 Implementar la mensajería con RabbitMQ para el microservicio de transacciones.
 Probar los microservicios de forma individual y conjunta.
 
-## Requisitos Previos
-
   ## Skills
   - Go
   - Fiber framework go
@@ -19,6 +17,8 @@ Probar los microservicios de forma individual y conjunta.
   - Conocimientos en arquitectura de microservicios orientada a eventos
   - Experiencia con RESTful APIs
   - Conocimientos en mensajería con RabbitMQ
+
+## Requisitos Previos
 
   ##-Microservicio de Cuentas:
 
