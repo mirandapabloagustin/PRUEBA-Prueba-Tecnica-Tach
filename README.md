@@ -91,6 +91,5 @@ docker-compose up
 |       |->Dockerfile
 |->Desafio-pdf
 |->docker-compose.yml
-|-- README.md
-|-- ...
+|->README.md
 ```
