@@ -4,13 +4,13 @@ Breve descripción del proyecto.
 
 ## Requisitos Previos
 
--Microservicio de Cuentas:
+### -Microservicio de Cuentas:
 
 Permite crear, consultar, actualizar y eliminar cuentas de usuarios.
 Expondrá una API RESTful para la gestión de cuentas.
 Almacenará la información de las cuentas en MongoDB.
 
--Microservicio de Transacciones:
+####-Microservicio de Transacciones:
 
 Permite realizar transferencias de dinero entre cuentas.
 Se comunicará con el microservicio de cuentas para obtener información de las cuentas.
