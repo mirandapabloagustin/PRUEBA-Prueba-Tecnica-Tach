@@ -1,0 +1,76 @@
+version: '3.8'
+services:
+
+  client-service:
+    build: 
+      context: ./client-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo-account
+    environment:
+      DATABASE_URI: "mongodb://mongodb:27017"
+      DATABASE_NAME: "account-service-db"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      start_period: 60s
+
+  mongo-account:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "quit(db.runCommand({ ping: 1 }).ok ? 0 : 1)"]
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  transaction-service:
+    build:
+      context: ./transaction-service
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo-transactions
+    environment:
+      DATABASE_URI: mongodb://mongodb:27017/
+      DATABASE_NAME: transaction-service
+    healthcheck: 
+      test: ["CMD", "curl", "-f", "http://localhost:8080/ || exit 1 " ]
+      interval: 10s
+      timeout: 5s
+      start_period: 60s
+
+  mongo-transactions:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "quit(db.runCommand({ ping: 1 }).ok ? 0 : 1)"]
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+volume:
+  mongo-transactions:
+  mongo-account:
