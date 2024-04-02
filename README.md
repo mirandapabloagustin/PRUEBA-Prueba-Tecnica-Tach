@@ -4,7 +4,19 @@ Breve descripción del proyecto.
 
 ## Requisitos Previos
 
-Enumera cualquier requisito previo necesario para ejecutar el proyecto, como tener Docker y Docker Compose instalados.
+-Microservicio de Cuentas:
+
+Permite crear, consultar, actualizar y eliminar cuentas de usuarios.
+Expondrá una API RESTful para la gestión de cuentas.
+Almacenará la información de las cuentas en MongoDB.
+
+-Microservicio de Transacciones:
+
+Permite realizar transferencias de dinero entre cuentas.
+Se comunicará con el microservicio de cuentas para obtener información de las cuentas.
+Utilizará RabbitMQ para la comunicación entre microservicios.
+Almacenará las transacciones en MongoDB.
+
 
 ## Configuración
 
